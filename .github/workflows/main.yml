@@ -4,19 +4,19 @@ on:
   schedule:
     # 18:00 UTC, Monday-Friday
     - cron: '0 18 * * 1-5'
-  workflow_dispatch: # Allows you to run it manually for testing
+  workflow_dispatch: # Allows you to run it manually
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
-          python-python-version: '3.9'
+          python-version: '3.11'
 
       - name: Install dependencies
         run: |
